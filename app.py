@@ -3,6 +3,7 @@ import altair as alt
 import streamlit as st
 # from local_components import card_container
 import matplotlib.pyplot as plt
+import plotly.express as px
 
 # Example DataFrame (Replace this with your real data)
 data = {
