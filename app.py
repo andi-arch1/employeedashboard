@@ -27,12 +27,12 @@ st.set_page_config(layout="wide")  # Add this at the start of your script
 # Streamlit App
 st.title("Employee Analytics Dashboard")
 
-# Create three sections for filtering, metrics, and visualizations
 with st.container():  # Use container to group it visually
     col2 = st.columns(1)[0]  # Full width for col2
 
 # Second row with col1 and col3
-col1, col3 = st.columns([1.5, 2.5])  # Adjust the widths
+with st.container():
+    col1, col3 = st.columns([1.5, 2.5])
 
 # Left Column (col1): Filters and Inputs
 with col1:
