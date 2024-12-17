@@ -28,7 +28,17 @@ st.set_page_config(layout="wide")  # Add this at the start of your script
 st.title("Employee Analytics Dashboard")
 
 # Create three sections for filtering, metrics, and visualizations
-col1, col2, col3 = st.columns([1.5, 2, 2.5])  # Adjust column width ratios
+with st.container():  # Use container to group it visually
+    col2 = st.columns(1)[0]  # Full width for col2
+    with col2:
+        st.write("This is col2 in the first row")
+
+# Second row with col1 and col3
+col1, col3 = st.columns([1.5, 2.5])  # Adjust the widths
+with col1:
+    st.write("This is col1 in the second row")
+with col3:
+    st.write("This is col3 in the second row")
 
 # Left Column (col1): Filters and Inputs
 with col1:
