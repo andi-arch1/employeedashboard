@@ -1,3 +1,4 @@
+
 import pandas as pd
 import altair as alt
 import streamlit as st
@@ -27,12 +28,18 @@ st.set_page_config(layout="wide")  # Add this at the start of your script
 # Streamlit App
 st.title("Employee Analytics Dashboard")
 
+# Create three sections for filtering, metrics, and visualizations
 with st.container():  # Use container to group it visually
     col2 = st.columns(1)[0]  # Full width for col2
+    with col2:
+        st.write("This is col2 in the first row")
 
 # Second row with col1 and col3
-with st.container():
-    col1, col3 = st.columns([1.5, 2.5])
+col1, col3 = st.columns([1.5, 2.5])  # Adjust the widths
+with col1:
+    st.write("This is col1 in the second row")
+with col3:
+    st.write("This is col3 in the second row")
 
 # Left Column (col1): Filters and Inputs
 with col1:
@@ -107,7 +114,7 @@ with col3:
     
         # Create a Plotly pie chart with tooltips
         fig = px.pie(gender_counts, values=gender_counts.values, names=gender_counts.index, hole=.3)
-        fig.update_traces(hoverinfo='label+percent', textinfo='label', textposition='inside', insidetextorientation='vertical')
+        fig.update_traces(hoverinfo='label+percent', textinfo='label', textposition='inside', insidetextorientation='horizontal')
         fig.update_layout(title_text="Gender Distribution")
     
         # Pass the figure to st.plotly_chart()
