@@ -99,13 +99,12 @@ with col3:
     st.subheader("Gender Distribution")
     if not filtered_df.empty:
         gender_counts = filtered_df["gender"].value_counts()
-        
-        # Create a Matplotlib figure explicitly
-        fig, ax = plt.subplots()
-        gender_counts.plot.pie(autopct="%1.1f%%", ax=ax, ylabel="", startangle=90)
-        ax.set_title("Gender Distribution")
-        
-        # Pass the figure to st.pyplot()
-        st.pyplot(fig)
+    
+        # Create a Plotly pie chart
+        fig = px.pie(gender_counts, values=gender_counts.values, names=gender_counts.index, hole=.3)
+        fig.update_layout(title_text="Gender Distribution")
+    
+        # Pass the figure to st.plotly_chart()
+        st.plotly_chart(fig)
     else:
         st.write("No data available for the selected filters.")
