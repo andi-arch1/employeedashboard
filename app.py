@@ -107,7 +107,7 @@ with col3:
     
         # Create a Plotly pie chart with tooltips
         fig = px.pie(gender_counts, values=gender_counts.values, names=gender_counts.index, hole=.3)
-        fig.update_traces(hoverinfo='label+percent', textinfo='label', textposition='inside', insidetextorientation='horizontal')
+        fig.update_traces(hoverinfo='label+percent', textinfo='label', textposition='inside', insidetextorientation='vertical')
         fig.update_layout(title_text="Gender Distribution")
     
         # Pass the figure to st.plotly_chart()
