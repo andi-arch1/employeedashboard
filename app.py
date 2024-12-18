@@ -1,4 +1,3 @@
-
 import pandas as pd
 import altair as alt
 import streamlit as st
@@ -36,10 +35,6 @@ with st.container():  # Use container to group it visually
 
 # Second row with col1 and col3
 col1, col3 = st.columns([1.5, 2.5])  # Adjust the widths
-with col1:
-    st.write("This is col1 in the second row")
-with col3:
-    st.write("This is col3 in the second row")
 
 # Left Column (col1): Filters and Inputs
 with col1:
