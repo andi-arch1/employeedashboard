@@ -193,12 +193,10 @@ if uploaded_file:
 
     # Display the dataset preview
     st.header("AI-Powered Chat")
-    st.write("**Dataset Preview:**")
-    st.write(df.head())
 
     # Display the dataset summary
-    st.write("**Dataset Summary:**")
-    st.write(dataset_summary)
+    # st.write("**Dataset Summary:**")
+    # st.write(dataset_summary)
 
     # Input box for user question
     user_input = st.text_input("Ask a question about the dataset:", key="user_input")
