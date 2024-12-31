@@ -29,83 +29,6 @@ if "context" not in st.session_state:
 if "dataset_summary" not in st.session_state:
     st.session_state.dataset_summary = "No dataset uploaded yet."
 
-
-# # Add custom CSS for floating chatbot
-# st.markdown("""
-#     <style>
-#         .chatbot {
-#             position: fixed;
-#             bottom: 20px;
-#             right: 20px;
-#             width: 300px;
-#             background: white;
-#             border: 1px solid #ddd;
-#             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-#             border-radius: 8px;
-#             padding: 10px;
-#             z-index: 1000;
-#         }
-#         .chatbot-header {
-#             font-weight: bold;
-#             background: #f8f9fa;
-#             border-bottom: 1px solid #ddd;
-#             padding: 5px;
-#             border-radius: 8px 8px 0 0;
-#             cursor: move;
-#         }
-#         .chatbot-content {
-#             max-height: 200px;
-#             overflow-y: auto;
-#             margin-top: 10px;
-#         }
-#         .chatbot-input {
-#             margin-top: 10px;
-#         }
-#     </style>
-# """, unsafe_allow_html=True)
-
-# # Floating chatbot
-# st.markdown("""
-#     <div class="chatbot">
-#         <div class="chatbot-header">AI Assistant</div>
-#         <div class="chatbot-content">
-#             <div id="chat-conversation"></div>
-#         </div>
-#         <div class="chatbot-input">
-#             <input type="text" id="chat-input" placeholder="Type your question..." style="width: 100%; padding: 5px;">
-#             <button id="chat-send" style="width: 100%; margin-top: 5px;">Send</button>
-#         </div>
-#     </div>
-# """, unsafe_allow_html=True)
-
-# # Javascript for chatbot functionality
-# st.markdown("""
-#     <script>
-#         const inputBox = document.getElementById("chat-input");
-#         const sendButton = document.getElementById("chat-send");
-#         const conversationBox = document.getElementById("chat-conversation");
-
-#         sendButton.addEventListener("click", () => {
-#             const userInput = inputBox.value;
-#             if (userInput) {
-#                 conversationBox.innerHTML += `<p><strong>You:</strong> ${userInput}</p>`;
-#                 // Simulate bot response (replace with real response logic)
-#                 const botResponse = "This is a bot response.";
-#                 conversationBox.innerHTML += `<p><strong>Bot:</strong> ${botResponse}</p>`;
-#                 inputBox.value = "";
-#                 conversationBox.scrollTop = conversationBox.scrollHeight;
-#             }
-#         });
-
-#         inputBox.addEventListener("keypress", (e) => {
-#             if (e.key === "Enter") {
-#                 sendButton.click();
-#             }
-#         });
-#     </script>
-# """, unsafe_allow_html=True)
-
-
 if uploaded_file:
     # Read the uploaded file into a DataFrame
     df = pd.read_csv(uploaded_file)
@@ -193,11 +116,6 @@ if uploaded_file:
 
     # Display the dataset preview
     st.header("AI-Powered Chat")
-
-    # Display the dataset summary
-    # st.write("**Dataset Summary:**")
-    # st.write(dataset_summary)
-
     # Input box for user question
     user_input = st.text_input("Ask a question about the dataset:", key="user_input")
 
