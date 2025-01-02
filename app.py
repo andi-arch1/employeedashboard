@@ -6,6 +6,10 @@ from langchain_core.prompts import ChatPromptTemplate
 
 ollama_url = "http://localhost:11434/"
 
+def query_ollama(prompt):
+    response = requests.post(ollama_url, json={"prompt": prompt})
+    return response.json()["text"]
+
 # Streamlit page configuration
 st.set_page_config(layout="wide")
 
