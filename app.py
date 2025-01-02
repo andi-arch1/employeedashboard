@@ -4,6 +4,8 @@ import plotly.express as px
 from langchain_ollama import OllamaLLM
 from langchain_core.prompts import ChatPromptTemplate
 
+ollama_url = "http://localhost:11434/"
+
 # Streamlit page configuration
 st.set_page_config(layout="wide")
 
