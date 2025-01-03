@@ -3,8 +3,6 @@ import pandas as pd
 import plotly.express as px
 from langchain_ollama import OllamaLLM
 from langchain_core.prompts import ChatPromptTemplate
-from llama_index.llms.ollama import ollama
-
 
 def query_ollama(prompt):
     response = requests.post(ollama_url, json={"prompt": prompt})
